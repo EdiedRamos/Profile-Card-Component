@@ -1,0 +1,77 @@
+@import "_colors";
+@import "_fonts";
+
+@mixin center($justify: center) {
+  display: flex;
+  justify-content: $justify;
+  align-items: center;
+}
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: $kumbh;
+  color: $very-dark-desaturated-blue;
+}
+
+body {
+  @include center;
+  min-height: 100vh;
+  background-image: url("./assets/images/bg-pattern-bottom.svg"), url("./assets/images/bg-pattern-bottom.svg");
+  background-position: -50% -50%, 150% 150%;
+  background-repeat: no-repeat;
+  background-color: $dark-cyan;
+  padding: 1rem;
+}
+
+.card-container {
+  max-width: 350px;
+  border-radius: 1rem;
+  background-color: white;
+  
+  > img {
+    max-width: 100%;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+  }
+}
+
+.card-body {
+  @include center;
+  position: relative;
+  flex-direction: column;
+  padding: 1.5rem;
+  
+  h3 {
+    margin-top: 2rem;
+    
+    span {
+      color: $dark-grayish-blue;
+    }
+  }
+  
+  p {
+    color: $dark-grayish-blue;
+  }
+  
+  > img {
+    position: absolute;
+    top: -50px;
+    left: calc(50% - 50px);
+    width: 100px;
+    border: 5px solid white;
+    border-radius: 50%;
+  }
+}
+
+.card-footer {
+  border-top: 1px solid $dark-gray;
+  display: grid;
+  justify-items: center;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 1.5rem;
+  
+  p {
+    color: $dark-grayish-blue;
+  }
+}
